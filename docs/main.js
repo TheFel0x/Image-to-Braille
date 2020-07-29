@@ -3,6 +3,7 @@ var text = {};
 var max_width = 50;
 var inverted = false;
 var dithering = false;
+var change = false;
 var canvas;
 var ctx;
 var charcount;
@@ -89,9 +90,19 @@ function tobraille(img) {
 }
 
 function filechanged(input) {
-	img = new Image();
-	canvas = document.createElement("CANVAS");
-	img.onload = function() {tobraille(img)};
-	if(input) file = URL.createObjectURL(input);
-	img.src = file;
+	if(change){
+		img = new Image();
+		canvas = document.createElement("CANVAS");
+		img.onload = function() {tobraille(img)};
+		if(input) file = URL.createObjectURL(input);
+		img.src = file;
+	}
+}
+
+function force_filechanged(input) {
+		img = new Image();
+		canvas = document.createElement("CANVAS");
+		img.onload = function() {tobraille(img)};
+		if(input) file = URL.createObjectURL(input);
+		img.src = file;
 }
