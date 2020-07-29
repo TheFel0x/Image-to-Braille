@@ -21,6 +21,7 @@
 			left:10px;
 			bottom:10px;
 			width:70vw;
+			height: 400px;
 			padding:0px;
 			margin:0px;
 			resize: vertical;
@@ -51,15 +52,20 @@
 		<span><input id="ch" type="checkbox" onchange="change = this.checked; filechanged();"> autochange</span><br><br>
 		<input type="number" min="2" value="50" step="2" onchange="max_width = this.value; filechanged();"><span>Width (chars)</span><br><br>
 		
-		<input id="red" type="number" min="0.01" max="10" value="1" step="0.01" onchange="r = this.value; filechanged();"><button onclick="r = 1; document.getElementById('red').value = 1; filechanged()">Reset</button><span>Red</span><br><br>		
-		<input id="green" type="number" min="0.01" max="10" value="1" step="0.01" onchange="g = this.value; filechanged();"><button onclick="g = 1; document.getElementById('green').value = 1; filechanged()">Reset</button><span>Green</span><br><br>
-		<input id="blue" type="number" min="0.01" max="10" value="1" step="0.01" onchange="b = this.value; filechanged();"><button onclick="b = 1; document.getElementById('blue').value = 1; filechanged()">Reset</button><span>Blue</span><br><br>
+		<input id="red" type="number" min="0.01" max="10" value="1" step="0.01" onchange="r = this.value; filechanged();"><button onclick="r = 1; document.getElementById('red').value = 1; filechanged()">Reset</button><span>Red (0 - 10)</span><br><br>		
+		<input id="green" type="number" min="0.01" max="10" value="1" step="0.01" onchange="g = this.value; filechanged();"><button onclick="g = 1; document.getElementById('green').value = 1; filechanged()">Reset</button><span>Green (0 - 10)</span><br><br>
+		<input id="blue" type="number" min="0.01" max="10" value="1" step="0.01" onchange="b = this.value; filechanged();"><button onclick="b = 1; document.getElementById('blue').value = 1; filechanged()">Reset</button><span>Blue (0 - 10)</span><br><br>
 		<button onclick="force_filechanged();">Manual Change</button><br><br>
 		<button onclick="text.select(); document.execCommand('copy');">Copy to clipboard</button><br><br>
 		Character Count: <span id="charcount">0</span>
 		<br><br>
 		<a href="https://github.com/505e06b2/Image-to-Braille" style="color: lightgreen;">Code by 505e06b2</a></br>
 		<a href="https://github.com/TheFel0x/Image-to-Braille" style="color: lightgreen;">Changed a bit by TheFel0x</a>
+		<!-- 
+			TODO:
+			- determine width from max char count
+			- auto resize textarea
+		-->
 	</div>
 </body>
 </html>
