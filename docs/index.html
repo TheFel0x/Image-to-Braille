@@ -46,7 +46,7 @@
 <body ondrop="event.preventDefault(); filechanged(event.dataTransfer.items[0].getAsFile());" ondragover="event.preventDefault()" onpaste="event.preventDefault(); filechanged(event.clipboardData.items[0].getAsFile());">
 	<textarea id="text" readonly></textarea>
 	<div id="options">
-		<input id="file" type="file" onchange="filechanged(this.files[0])"><br><br>
+		<input id="file" type="file" onchange="force_filechanged(this.files[0])"><br><br>
 		<span><input type="checkbox" onchange="inverted = this.checked; darkTheme(inverted); filechanged();"> Invert</span><br><br>
 		<span><input type="checkbox" onchange="dithering = this.checked; filechanged();"> Dithering</span><br><br>
 		<span><input id="ch" type="checkbox" onchange="change = this.checked; filechanged();"> autochange</span><br><br>
