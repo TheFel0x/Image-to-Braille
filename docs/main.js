@@ -17,7 +17,7 @@ window.onload = function() {
 	file = "select.png";
 	charcount = document.getElementById("charcount");
 	darkTheme(inverted);
-	filechanged();
+	force_filechanged();
 }
 
 function get_char(current) {
